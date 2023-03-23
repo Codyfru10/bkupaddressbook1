@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    tools {
+      maven "mymaven"
+    }
+    stages {
+        stage('cohort febclass build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('cohort febclass deploy') {
+            steps {
+               sshagent(['newjentomcat']) {
+    // some block
+  sh "scp -o strickhostkeychecking=no target/*.war ansadmin@54.87.179.1:/home/ansadmin/tomcat/webapps"
+}
+            }
+        }
+    }
+}
