@@ -11,7 +11,7 @@ pipeline {
         }
         stage('cohort febclass deploy') {
             steps {
-               sshagent(['newjentomcat']) {
+               sshagent(['febclass']) {
     // some block
   sh "scp -o stricthostkeychecking=no target/*.war ansadmin@18.207.141.177:/home/ansadmin/tomcat/webapps"
 }
