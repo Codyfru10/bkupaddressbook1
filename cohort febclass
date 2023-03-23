@@ -13,7 +13,7 @@ pipeline {
             steps {
                sshagent(['newjentomcat']) {
     // some block
-  sh "scp -o strickhostkeychecking=no target/*.war ansadmin@54.87.179.1:/home/ansadmin/tomcat/webapps"
+  sh "scp -o stricthostkeychecking=no target/*.war ansadmin@54.87.179.1:/home/ansadmin/tomcat/webapps"
 }
             }
         }
